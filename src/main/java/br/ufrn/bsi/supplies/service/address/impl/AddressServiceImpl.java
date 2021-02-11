@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import br.ufrn.bsi.supplies.entity.Address;
 import br.ufrn.bsi.supplies.repository.AddressRepository;
-import br.ufrn.bsi.supplies.service.BrasilApiService;
 import br.ufrn.bsi.supplies.service.address.AddressService;
+import br.ufrn.bsi.supplies.service.brasilapi.BrasilApiService;
 
 @Service
 @Primary
@@ -34,7 +34,7 @@ public class AddressServiceImpl implements AddressService {
 
         if (!optionalAddress.isPresent()) {
             optionalAddress = api.getAddressByCep(cep);
-            Address saved = addressRepository.save(optionalAddress.get());
+            addressRepository.save(optionalAddress.get());
         }
 
         return optionalAddress;

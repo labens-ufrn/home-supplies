@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import br.ufrn.bsi.supplies.entity.Address;
 import br.ufrn.bsi.supplies.service.address.AddressService;
 
-@SpringBootTest()
+@SpringBootTest
 public class AddressServiceTest {
 
     @Autowired
