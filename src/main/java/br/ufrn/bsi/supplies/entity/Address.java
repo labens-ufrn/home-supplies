@@ -23,10 +23,10 @@ public class Address {
 
     protected Address() {}
 
-    public Address(String cep, String state, String city) {
+    public Address(String cep, String city, String state) {
         this.cep = cep;
-        this.state = state;
         this.city = city;
+        this.state = state;
     }
 
     public Long getId() {
