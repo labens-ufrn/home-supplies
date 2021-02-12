@@ -20,7 +20,7 @@ public class HelloController {
 	@GetMapping("/hello")
 	public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
 
-		String cep = "58705-000";
+		String cep = "58705000";
 		long start1 = System.currentTimeMillis();
 		Optional<Address> address1 = addressService.search(cep, CepApi.BRASIL_API_CEP);
 		long elapsed1 = (System.currentTimeMillis() - start1);
