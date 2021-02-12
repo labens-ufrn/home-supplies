@@ -25,8 +25,9 @@ public class MyHomeSuppliesApplication {
 			repository.save(new User("chloe", "Chloe", "O'Brian"));
 			repository.save(new User("kim", "Kim", "Bauer"));
 			repository.save(new User("david", "David", "Palmer"));
-			repository.save(new User("michelle", "Michelle", "Dessler"));
 			repository.save(new User("taciano", "Taciano", "Silva"));
+			repository.save(new User("michelle", "Michelle", "Dessler"));
+			
 
 			// fetch all users
 			System.out.println("Users found with findAll():");
@@ -54,7 +55,7 @@ public class MyHomeSuppliesApplication {
 			// }
 			System.out.println("");
 			// delete an individual customer by ID
-			repository.deleteById(6L);
+			repository.deleteById(5L);
 			System.out.println("Delete User with deleteById(6L):");
 			System.out.println("--------------------------------");
 			System.out.println("");
