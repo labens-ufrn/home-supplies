@@ -1,23 +1,25 @@
-package br.ufrn.bsi.supplies.service;
+package br.ufrn.bsi.supplies.service.cep.impl;
 
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
 import br.ufrn.bsi.supplies.entity.Address;
+import br.ufrn.bsi.supplies.service.cep.CepApi;
+import br.ufrn.bsi.supplies.service.cep.CepService;
 
 @Service
-public class MockBrasilApiService implements BrasilApiService {
- 
-    public Optional<Address> getAddressByCep(String cep) {
+public class MockCepService implements CepService {
+
+    public Optional<Address> getAddressByCep(String cep, CepApi api) {
         if (cep.equals("59300000"))
             return Optional.of(AddressConst.CAICO_ADDRESS);
         return Optional.of(AddressConst.NULL_ADDRESS);
     }
 
-    public Optional<String> getAddressJsonByCep(String cep) {
+    public Optional<String> getAddressJsonByCep(String cep, CepApi api) {
         return Optional.empty();
-    }   
+    }
 }
 
 class AddressConst {

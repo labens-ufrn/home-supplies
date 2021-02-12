@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import br.ufrn.bsi.supplies.entity.Address;
 import br.ufrn.bsi.supplies.service.address.AddressService;
+import br.ufrn.bsi.supplies.service.cep.CepApi;
 
 /**
  * Classe para representar um Mock do AddressService
@@ -14,7 +15,7 @@ import br.ufrn.bsi.supplies.service.address.AddressService;
 public class MockAddressService implements AddressService {
 
     @Override
-    public Optional<Address> search(String cep) {
+    public Optional<Address> search(String cep, CepApi api) {
         if (cep.equals("59300000"))
             return Optional.of(AddressConst.CAICO_ADDRESS);
         return Optional.of(AddressConst.NULL_ADDRESS);

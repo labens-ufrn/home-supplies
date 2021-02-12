@@ -9,7 +9,8 @@ import org.springframework.stereotype.Service;
 import br.ufrn.bsi.supplies.entity.Address;
 import br.ufrn.bsi.supplies.repository.AddressRepository;
 import br.ufrn.bsi.supplies.service.address.AddressService;
-import br.ufrn.bsi.supplies.service.brasilapi.BrasilApiService;
+import br.ufrn.bsi.supplies.service.cep.CepApi;
+import br.ufrn.bsi.supplies.service.cep.CepService;
 
 @Service
 @Primary
@@ -19,10 +20,10 @@ public class AddressServiceImpl implements AddressService {
     private AddressRepository addressRepository;
 
     @Autowired
-    private BrasilApiService api;
+    private CepService cepService;
 
     @Override
-    public Optional<Address> search(String cep) {
+    public Optional<Address> search(String cep, CepApi api) {
         // Busca no Banco de Dados
         Optional<Address> optionalAddress = addressRepository.findByCep(cep);
         /*
@@ -33,7 +34,7 @@ public class AddressServiceImpl implements AddressService {
         }*/
 
         if (!optionalAddress.isPresent()) {
-            optionalAddress = api.getAddressByCep(cep);
+            optionalAddress = cepService.getAddressByCep(cep, api);
             addressRepository.save(optionalAddress.get());
         }
 

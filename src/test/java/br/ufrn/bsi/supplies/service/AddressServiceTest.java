@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import br.ufrn.bsi.supplies.entity.Address;
 import br.ufrn.bsi.supplies.service.address.AddressService;
+import br.ufrn.bsi.supplies.service.cep.CepApi;
 
 @SpringBootTest
 public class AddressServiceTest {
@@ -19,9 +20,9 @@ public class AddressServiceTest {
 
     @Test
     public void testGetAddress() {
-        Optional<Address> address = addressService.search("59300000");
+        Optional<Address> address = addressService.search("59300000", CepApi.BRASIL_API_CEP);
         assertEquals("Caicó", address.get().getCity());
         assertEquals("RN", address.get().getState());
-        address = addressService.search("59300000");
+        address = addressService.search("59300000", CepApi.BRASIL_API_CEP);
     }
 }

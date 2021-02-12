@@ -3,6 +3,7 @@ package br.ufrn.bsi.supplies.service.address;
 import java.util.Optional;
 
 import br.ufrn.bsi.supplies.entity.Address;
+import br.ufrn.bsi.supplies.service.cep.CepApi;
 
 public interface AddressService {
 
@@ -15,6 +16,6 @@ public interface AddressService {
      * @param cep
      * @return
      */
-    Optional<Address> search(String cep);
+    Optional<Address> search(String cep, CepApi api);
     
 }
