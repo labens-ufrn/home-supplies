@@ -23,6 +23,6 @@ public class MockAddressService implements AddressService {
 }
 
 class AddressConst {
-    public static final Address CAICO_ADDRESS = new Address("59300000", "RN", "Caicó");
+    public static final Address CAICO_ADDRESS = new Address("59300000", "Caicó", "RN");
     public static final Address NULL_ADDRESS = new Address("NULL", "NULL", "NULL");
 }
