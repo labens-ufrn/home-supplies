@@ -42,6 +42,8 @@ public class CepServiceImpl implements CepService {
         else {
             Endereco endereco = gson.fromJson(jsonEmString, Endereco.class);
             address = new Address(endereco.getCep(), endereco.getLocalidade(), endereco.getUf());
+            address.setNeighborhood(endereco.getBairro());
+            address.setStreet(endereco.getLogradouro());
         }
         return address;
     }
