@@ -23,3 +23,4 @@ mvnw spring-boot:run
 * [15 boas práticas para desenvolvimento de aplicações com Spring Boot](https://medium.com/equals-lab/15-boas-pr%C3%A1ticas-para-desenvolvimento-de-aplica%C3%A7%C3%B5es-com-spring-boot-953e0ff2e24f)
 * [Repositório com Arquitetura Clean de Exemplo](https://github.com/mariazevedo88/travels-java-api)
 * [Django + Docker + PostgreSQL](https://www.youtube.com/watch?v=xxjzwdtWozI)
+* http://testinglikeaboss.com/running-tests/mutation-testing-with-junit-5-pitest/
