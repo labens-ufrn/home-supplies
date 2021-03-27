@@ -68,6 +68,11 @@ public class User {
         this.email = email;
     }
 
+    public String fullName() {
+        String space = lastName.equals("")? "": " ";
+        return String.format("%s%s%s", firstName, space, lastName);
+    }
+
     @Override
     public String toString() {
         return String.format("User[id=%d, username='%s']", id, username);
